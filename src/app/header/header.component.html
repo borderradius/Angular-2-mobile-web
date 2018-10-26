@@ -20,6 +20,9 @@
     <img [src]="phone" alt="전화상담버튼" class="consult-btn">
   </a>
 
+  <!-- <a href="#!" class="go-ss" target="_blank"></a> -->
+  <a href="{{ center_link }}" *ngIf="is_ss" class="go-ss" target="_blank" onclick="gtag('event','click',{'event_category': 'ss-to-cd' })">{{ center }}<br/>둘러보기</a>
+  <a href="{{ center_link }}" *ngIf="!is_ss" class="go-ss" target="_blank" onclick="gtag('event','click',{'event_category': 'cd-to-ss' })">{{ center }}<br/>둘러보기</a>
 
   <!-- <a class="consult header_btn" (click)="consultToggle()"><i class="fa fa-phone" aria-hidden="true"></i></a> -->
   <!-- <div class="online-consult" [ngClass]="{'show': consultShow}">
@@ -78,11 +81,12 @@
 
     <ul (click)="toggle()" class="nav-menu">
       <li>
-        <a routerLink="requestConsult">
-          - 상담신청</a>
         <small [ngClass]="{'hide': hide}" class="extend">
           * 방문상담 시간연장 : 평일저녁 8시까지
         </small>
+        <a routerLink="requestConsult" class="go-another">상담신청</a>
+        <a href="{{ center_link }}"  *ngIf="is_ss" class="go-another" target="_blank" onclick="gtag('event','click',{'event_category': 'ss-to-cd' })">{{ center }} 둘러보기</a>
+        <a href="{{ center_link }}"  *ngIf="!is_ss" class="go-another" target="_blank" onclick="gtag('event','click',{'event_category': 'cd-to-ss' })">{{ center }} 둘러보기</a>
       </li>
       <li>
         <a routerLink="">
@@ -178,9 +182,8 @@
           </li>
         </ul>
       </li>
-      
     </ul>
-  </nav>  
+  </nav> 
 </header> 
 
 

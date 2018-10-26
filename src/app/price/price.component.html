@@ -10,11 +10,18 @@
         <small>
           <span class="point">* 색상금액</span>은 예정일로부터 7개월전 예약시 금액입니다. 상담시 당일예약: 10만원 할인</small>
       </caption>
-      <colgroup>
+      <colgroup *ngIf="!is_ss">
         <col width="14%">
         <col width="23%">
         <col width="23%">
         <col width="23%">
+      </colgroup>
+      <colgroup *ngIf="is_ss">
+        <col width="14%">
+        <col width="21.5%">
+        <col width="21.5%">
+        <col width="21.5%">
+        <col width="21.5%">
       </colgroup>
       <thead>
         <tr>
@@ -30,6 +37,10 @@
           <th class="gradient">{{ dr3name }}
             <br/>
             <strong>{{ dr3cost }}</strong>
+          </th>
+          <th class="gradient" *ngIf="is_ss">{{ dr4name }}
+            <br/>
+            <strong>{{ dr4cost }}</strong>
           </th>
         </tr>
       </thead>
@@ -54,6 +65,14 @@
             <span class="mb">산후케어 :<br/> 2회(60분)</span>
             <span>남편식사 : {{ fatherFood3 }}회<br/>(미리신청시)</span>
           </td>
+          <td *ngIf="is_ss">
+            <span class="mb">산전케어 :
+              <br/> 2회(60분)</span>
+            <span class="mb">산후케어 :
+              <br/> 2회(60분)</span>
+            <span>남편식사 : {{ fatherFood4 }}회
+              <br/>(미리신청시)</span>
+          </td>
         </tr>
         <tr>
           <th>1주</th>
@@ -65,6 +84,9 @@
           </td>
           <td>{{ dr3 / 14 * 7 + 10 }}
             <span class="dc">{{ (dr3 / 14 * 7 + 10) * dc | round }}</span>
+          </td>
+          <td *ngIf="is_ss">{{ dr4 / 14 * 7 + 10 }}
+            <span class="dc">{{ (dr4 / 14 * 7 + 10) * dc | round }}</span>
           </td>
         </tr>
         <tr>
@@ -78,6 +100,9 @@
           <td>{{ dr3 / 14 * 10 + 15 | round }}
             <span class="dc">{{ (dr3 / 14 * 10 + 15) * dc | round }}</span>
           </td>
+          <td *ngIf="is_ss">{{ dr4 / 14 * 10 + 15 | round }}
+            <span class="dc">{{ (dr4 / 14 * 10 + 15) * dc | round }}</span>
+          </td>
         </tr>
         <tr class="week2">
           <th>2주</th>
@@ -89,6 +114,9 @@
           </td>
           <td>{{ dr3 }}
             <span class="dc">{{ dr3 * dc | round }}</span>
+          </td>
+          <td *ngIf="is_ss">{{ dr4 }}
+            <span class="dc">{{ dr4 * dc | round }}</span>
           </td>
         </tr>
         <tr>
@@ -102,6 +130,9 @@
           <td>{{ dr3 * 1.5 }}
             <span class="dc">{{ (dr3 * 1.5) * dc | round }}</span>
           </td>
+          <td *ngIf="is_ss">{{ dr4 * 1.5 }}
+            <span class="dc">{{ (dr4 * 1.5) * dc | round }}</span>
+          </td>
         </tr>
         <tr>
           <th>4주</th>
@@ -114,6 +145,9 @@
           <td>{{ dr3 * 2 }}
             <span class="dc">{{ (dr3 * 2) * dc | round }}</span>
           </td>
+          <td *ngIf="is_ss">{{ dr4 * 2 }}
+            <span class="dc">{{ (dr4 * 2) * dc | round }}</span>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -123,11 +157,18 @@
         <small>
           <span class="point">* 색상금액</span>은 예정일로부터 7개월전 예약시 금액입니다. 상담시 당일예약: 10만원 할인</small>
       </caption>
-      <colgroup>
+      <colgroup *ngIf="!is_ss">
         <col width="14%">
         <col width="23%">
         <col width="23%">
         <col width="23%">
+      </colgroup>
+      <colgroup *ngIf="is_ss">
+        <col width="14%">
+        <col width="21.5%">
+        <col width="21.5%">
+        <col width="21.5%">
+        <col width="21.5%">
       </colgroup>
       <thead>
         <tr>
@@ -143,6 +184,10 @@
           <th class="gradient">{{ dr3name }}
             <br/>
             <strong>{{ bcr3cost }}</strong>
+            <br/>(바디케어 포함 금액)</th>
+          <th class="gradient" *ngIf="is_ss">{{ dr4name }}
+            <br/>
+            <strong>{{ bcr4cost }}</strong>
             <br/>(바디케어 포함 금액)</th>
         </tr>
       </thead>
@@ -161,6 +206,12 @@
             <span  class="mb">바디케어 :<br/> {{ bdcare3 }}회</span>
             <span>남편식사 : {{ fatherFood3 }}회<br/>(미리 신청시)</span>
           </td>
+          <td *ngIf="is_ss">
+            <span class="mb">바디케어 :
+              <br/> {{ bdcare4 }}회</span>
+            <span>남편식사 : {{ fatherFood4 }}회
+              <br/>(미리 신청시)</span>
+          </td>
         </tr>
         <tr>
           <th>1주</th>
@@ -172,6 +223,9 @@
           </td>
           <td>{{ bcr3 / 14 * 7 + 10 | round }}
             <span class="dc">{{ (bcr3 / 14 * 7 + 10) * dc | round }}</span>
+          </td>
+          <td *ngIf="is_ss">{{ bcr4 / 14 * 7 + 10 | round }}
+            <span class="dc">{{ (bcr4 / 14 * 7 + 10) * dc | round }}</span>
           </td>
         </tr>
         <tr>
@@ -185,6 +239,9 @@
           <td>{{ bcr3 / 14 * 10 + 15 | round }}
             <span class="dc">{{ (bcr3 / 14 * 10 + 15) * dc | round }}</span>
           </td>
+          <td *ngIf="is_ss">{{ bcr4 / 14 * 10 + 15 | round }}
+            <span class="dc">{{ (bcr4 / 14 * 10 + 15) * dc | round }}</span>
+          </td>
         </tr>
         <tr class="week2">
           <th>2주</th>
@@ -196,6 +253,9 @@
           </td>
           <td>{{ bcr3 }}
             <span class="dc">{{ bcr3 * dc | round }}</span>
+          </td>
+          <td *ngIf="is_ss">{{ bcr4 }}
+            <span class="dc">{{ bcr4 * dc | round }}</span>
           </td>
         </tr>
         <tr>
@@ -209,6 +269,9 @@
           <td>{{ bcr3 * 1.5 | round }}
             <span class="dc">{{ (bcr3 * 1.5) * dc | round }}</span>
           </td>
+          <td *ngIf="is_ss">{{ bcr4 * 1.5 | round }}
+            <span class="dc">{{ (bcr4 * 1.5) * dc | round }}</span>
+          </td>
         </tr>
         <tr>
           <th>4주</th>
@@ -220,6 +283,9 @@
           </td>
           <td>{{ bcr3 * 2 }}
             <span class="dc">{{ (bcr3 * 2) * dc | round }}</span>
+          </td>
+          <td *ngIf="is_ss">{{ bcr4 * 2 }}
+            <span class="dc">{{ (bcr4 * 2) * dc | round }}</span>
           </td>
         </tr>
       </tbody>

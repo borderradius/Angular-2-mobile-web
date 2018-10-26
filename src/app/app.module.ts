@@ -43,6 +43,11 @@ import { MailPopupComponent } from './mail-popup/mail-popup.component';
 import { PriceComponent } from './price/price.component';
 
 
+/* 
+NgModule Decorator :
+Component Decorator가 class를 Component라고 명시하듯
+NgModule Decorator는 class를 Module라고 명시해줌.
+*/
 @NgModule({
   declarations: [
     AppComponent,

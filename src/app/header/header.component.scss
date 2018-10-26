@@ -21,6 +21,22 @@ header {
                 right: 0;
             }
         }
+        &.go-ss {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 14px;
+            padding-top: 16px;
+            border-radius: 50%;
+            background: color(header-bg);
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            border: 0;
+            font-size: 10px;
+        }
     }
     .logo {
         text-align: center;
@@ -48,8 +64,7 @@ nav {
     top: 0;
     width: $nav_w;
     height: $nav_h;
-    padding: 1.4rem;
-    padding-bottom: 6rem;
+    padding: 3rem 1.4rem 6rem;
     position: fixed;
     transform: translateX(-110%);
     z-index: 1100;
@@ -93,6 +108,15 @@ nav {
         font-size: 1rem;
         color: color(header-bg) !important;
         text-transform: uppercase;
+        &.go-another {
+            color: #fff !important;
+            background: color(header-bg);
+            font-size: 10px;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
     }
     span {
         display: inline-block;
@@ -114,6 +138,8 @@ nav {
         }
     }
 }
+
+
 
 
 // 온라인상담 우측 슬라이드

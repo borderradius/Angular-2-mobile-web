@@ -19,6 +19,9 @@ export class ServiceComponent implements OnInit {
   infantCare8: string = 'assets/img/infant-care8.png';
   infantCare9: string = 'assets/img/infant-care9.png';
   infantCare10: string = 'assets/img/infant-care10.png';
+  infantCare11: string = 'assets/img/infant-care11.png';
+  infantCare12: string = 'assets/img/infant-care12.png';
+  infantCare13: string = 'assets/img/infant-care13.png';
 
   motherCare2: string = 'assets/img/mother-care2.png';
   motherCare3: string = 'assets/img/mother-care3.png';

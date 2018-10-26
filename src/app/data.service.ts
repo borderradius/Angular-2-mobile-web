@@ -15,6 +15,7 @@ export class DataService {
   goal = this.goals.asObservable();
   zoom: number = 17;
 
+  // 청담점 모바일은 아래 정보 주석제거
   centerName: string = "청담점";
   centerLocation: string = "cd";
   oiCode: string = "OI00000119";
@@ -22,12 +23,13 @@ export class DataService {
   lng = 127.0574163;
   tel: string = "02-541-5617";
 
-  // centerName: string = "삼성점";
-  // centerLocation: string = "ss";
-  // oiCode: string = "OI00000121";
-  // lat = 37.5105759;
-  // lng = 127.05501;
-  // tel: string = "02-508-0013";
+  // 삼성점 모바일은 아래 정보 주석제거
+  //  centerName: string = "삼성점";
+  //  centerLocation: string = "ss";
+  //  oiCode: string = "OI00000121";
+  //  lat = 37.5105759;
+  //  lng = 127.05501;
+  //  tel: string = "02-508-0013";
 
 
 

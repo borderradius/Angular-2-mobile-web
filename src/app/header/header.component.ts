@@ -44,13 +44,25 @@ export class HeaderComponent implements OnInit {
   
   tel:string = '';
   phone: string = "assets/img/phone.png";
+  center: string = '';
+  center_link: string = "";
+  event_category: string = "";
+  is_ss: boolean = true;
 
   constructor(public _data: DataService, public route: ActivatedRoute) {
     if (this._data.centerLocation == 'ss') {
       this.hide = false;
       this.tel = "tel:02-508-0013";
+      this.center = "청담점";
+      this.center_link = "http://trinitycare.co.kr/cd-m/";
+      this.event_category = "ss-to-cd";
+      
     } else if (this._data.centerLocation == 'cd') {
       this.tel = "tel:02-541-5617";
+      this.center = "삼성점";
+      this.center_link = "http://trinitycare.co.kr/ss-m/";
+      this.event_category = "cd-to-ss";
+      this.is_ss = false;
     }
   }
 

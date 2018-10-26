@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from "../data.service";
 
+// Metadata
 @Component({
   selector: 'app-mail-popup',
   templateUrl: './mail-popup.component.html',
@@ -10,7 +11,7 @@ export class MailPopupComponent implements OnInit {
 
   hide:boolean;
 
-  private_class: string = "assets/img/private_class_june.jpg";
+  private_class: string = "assets/img/private_class_10.jpeg";
   
 
   constructor(public _data: DataService) { 
